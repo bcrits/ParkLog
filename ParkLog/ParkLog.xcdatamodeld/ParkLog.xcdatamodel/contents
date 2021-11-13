@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Park" representedClassName="Park" syncable="YES">
+        <attribute name="address" attributeType="String"/>
+        <attribute name="guide" attributeType="String"/>
+        <attribute name="hasBeenVisited" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="photo1_location" optional="YES" attributeType="String"/>
+        <attribute name="photo1_url" optional="YES" attributeType="String"/>
+        <attribute name="photo2_location" optional="YES" attributeType="String"/>
+        <attribute name="photo2_url" optional="YES" attributeType="String"/>
+        <relationship name="visits" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Visit" inverseName="park" inverseEntity="Visit"/>
+    </entity>
+    <entity name="Visit" representedClassName="Visit" syncable="YES">
+        <relationship name="park" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="Park" inverseName="visits" inverseEntity="Park"/>
+    </entity>
+    <elements>
+        <element name="Park" positionX="-54" positionY="-9" width="128" height="178"/>
+        <element name="Visit" positionX="-36" positionY="36" width="128" height="58"/>
+    </elements>
+</model>
